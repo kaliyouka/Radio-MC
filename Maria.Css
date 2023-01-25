@@ -1,0 +1,257 @@
+*{font-family: Consolas,monaco,monospace; }
+body{background-color: rgb(236, 11, 11);}
+.holder{    -webkit-overflow-scrolling: touch;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: var(--viewport-height);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+.parent {width: 450px; height: 350px;overflow: hidden;border-radius: 7px;}
+.child {
+            width: 100%;
+            height: 100%;
+            background-color: black; /* fallback color */
+            background-image: url("./maria-callas_a147564.jpeg");
+            background-position: center;
+            background-size: cover;
+
+            }
+            .parent:hover .child,
+            .parent:focus .child {
+            transform: scale(1.1);
+            transition: 0.9s;
+            transition-timing-function: ecubic-bezier(0.42,0,0.58,1);;
+            }
+            .child::before {
+            content: "";
+            display: none;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(62, 30, 30, 0.457);
+            }
+
+
+
+            .parent:hover .child:before,
+            .parent:focus .child:before {
+            display: block;
+            }
+            span {
+            color: white; /* Good thing we set a fallback color! */
+            font-family: sans-serif;
+            padding: 25%;
+            position: relative;
+            margin-top: 130px;
+            }
+            .parent:hover span,
+            .parent:focus span {
+            display: block;
+            }
+li{
+    display: inline ;
+    padding: 10px ;
+    border: solid black 1px ;
+    margin-left: 3.5px;
+    font-weight: bold;
+}
+li:hover{
+    background-color: rgba(53, 207, 253, 0.696);
+    cursor: pointer;
+}
+ul {
+    padding: 0;
+    position: relative;
+}
+@media only screen and (max-width: 725px){
+    h1{
+        font-size: 160%;
+        word-spacing: normal;
+    }
+  }
+  @media only screen and (max-width: 725px){
+    li{
+        font-size: 90%;
+        padding: 1px;
+        font-weight: bolder;
+        word-spacing: normal;
+        border: solid black 1px ;
+        margin-left: 1.5px;
+    }
+  }
+  @media only screen and (max-width: 725px){
+    .parent {width: 350px; height: 250px;overflow: hidden;border-radius: 7px;}
+
+  }
+
+  svg{
+	position: relative;
+	top: -20px;
+	width: 300px;
+	height: 300px;
+  align-items: center;
+}
+rect{
+	fill:#000000;
+}
+.mid-rect{
+	fill: #b6bbbd;
+}
+
+.shadow{
+	filter:url(#shadow);
+}
+
+.shadow-2{
+	filter:url(#shadow-2);
+}
+
+.spin {
+	transform-origin: center;
+	transform-box: fill-box;
+	animation: rotate-wheel 8s infinite linear;
+}
+
+@keyframes rotate-wheel{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.buttons{
+ position: relative;
+ display: flex;
+ align-items: center;
+ /*top: -650px;
+ left: 50px;*/
+ 
+}
+
+i{
+  color:#20cbff;
+  font-size: 30px;
+
+}
+
+i.fa-music{
+font-size: 15px;
+}
+
+button{
+	width: 121px;
+	height: 50px;
+	border-radius: 10px;
+	outline: none;
+	box-shadow: 2px 2px 3px ;
+    background-color: #10493e57;
+    margin-top: -140px;
+    padding: 5px;
+    margin-left: 15px;
+    }
+
+    .second-g{
+      background-color: antiquewhite;
+  }
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+a::visited {
+  text-decoration: none;
+}
+footer{
+  color:black;
+  margin-top: -10px;
+}
+ footer li{
+  margin-left: 15px;
+  margin-right: 25px;
+  border: none;
+ }
+ @media only screen and (max-width: 725px){
+  footer li {
+    margin: 15px;
+    margin-top: 15px;
+}
+ }
+ @media only screen and (max-width: 425px){
+  footer ul {
+    display: flex;
+    margin-top: -15px;
+    margin-bottom: -10px;
+    font-size: 80%;
+}
+ }
+.hakim{
+  width:75px;
+  height: auto;
+  position: relative;
+  margin-top: -37px;
+  margin-bottom: -17px;
+  /*margin-left: 278px;*/
+}
+
+.slider_container {
+  width: 75%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25px;
+}
+ 
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+ 
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+ 
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+  opacity: 1.0;
+}
+ 
+.seek_slider {
+  width: 60%;
+}
+ 
+.volume_slider {
+  width: 30%;
+}
+ 
+.current-time,
+.total-duration {
+  padding: 10px;
+}
